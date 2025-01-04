@@ -1,0 +1,14 @@
+[Unit]
+Description=Start x11vnc at startup
+After=display-manager.service
+
+[Service]
+Environment=DISPLAY=:0
+Type=simple
+User=kali
+ExecStart=/usr/local/bin/start-x11vnc.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
